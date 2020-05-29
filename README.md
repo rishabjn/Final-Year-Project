@@ -40,9 +40,9 @@
 3. Install the truffle framework.
 4. Install metamask chrome extension and sync/connect it with ganache local server 8545(Check youtube videos how to setup ganche and metamask with local server)
 4. Now open terminal/Cmd prompt, go to the project directory and run the following commands:
- '''
+```
  truffle compile
  truffle migrate --reset
  npm run dev 
-'''
+```
 (you might get an error in npm cmd,so delete the node_module file and reinstall it using "npm install" cmd.)
