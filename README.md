@@ -33,3 +33,13 @@
 > Truffle framework to test and run
 
 > npm lite server
+
+# How to run 
+1. Install the ganache application.(based on win/linux/mac)
+2. Install npm latest version.
+3. Install the truffle framework.
+4. Install metamask chrome extension and sync/connect it with ganache local server 8545(Check youtube videos how to setup ganche and metamask with local server)
+4. Now open terminal/Cmd prompt, go to the project directory and run the following commands:
+     i. truffle compile
+    ii. truffle migrate --reset
+   iii. npm run dev (you might get an error here so delete the node_module file and reinstall it using "npm install" cmd.)
