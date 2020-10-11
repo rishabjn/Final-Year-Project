@@ -12,6 +12,7 @@ contract Main {
         uint count;
     }
     mapping(address => Student) students;
+    mapping(address => bool) studentNew;
     mapping(address => bool) studCheck;
     event Check(address indexed _from,address indexed _to, string certId, uint count, address[3] verify);
     address[] public studentacc;
@@ -77,9 +78,9 @@ contract Main {
         return (teachers[ins].name, teachers[ins].id, teachers[ins].post, teachers[ins].domain);
     }
     function destroy (address addr) public {
-        //require(exists(msg.sender));
+        require(exists(msg.sender));
         delete students[addr];
-        //emit UserDestroyed(msg.sender);
+        emit UserDestroyed(msg.sender);
   }
     function verify(address studAdd, string memory certHash) payable public returns(string memory){
         
@@ -100,7 +101,7 @@ contract Main {
             emit Check(msg.sender, studAdd, "Verified Certificate",students[studAdd].count, students[studAdd].verifier);
             return "Verififed Certificate";
         }
-                //Certificate Hash check 
+       //Certificate Hash check 
        if(cerificateHash[certHash]==false){
             emit Check(msg.sender, studAdd, "Invalid Certificate Hash",students[studAdd].count, students[studAdd].verifier);
             return "Invalid Certificate Hash";
